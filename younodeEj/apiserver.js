@@ -27,9 +27,14 @@ var server = http.createServer(function (req, res) {
     if (result) {
         res.writeHead(200, { 'Content-Type': 'application/json' })
         res.end(JSON.stringify(result))
+        console.log("req url",req.url)
+        console.log("parsed",parsedUrl)
+        console.log("time",time)
+
     } else {
         res.writeHead(404)
         res.end()
     }
+
 })
 server.listen(Number(process.argv[2]))
